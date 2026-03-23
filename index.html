@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AML Monitoring using Knowledge Graph</title>
+    <!-- Use vis-network for Knowledge Graph visualization -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Optional Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="logo">
+            <i class="fa-solid fa-shield-virus"></i>
+            <h1>AML Monitoring using Knowledge Graph</h1>
+        </div>
+        <div class="header-controls">
+            <span id="system-status" class="status-badge"><i class="fa-solid fa-circle-check"></i> System Active</span>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <!-- Dashboard Left: The Graph -->
+        <section class="panel graph-panel">
+            <div class="panel-header">
+                <h2><i class="fa-solid fa-network-wired"></i> Transaction Network</h2>
+                <div class="controls">
+                    <button id="add-node-btn" class="btn btn-secondary"><i class="fa-solid fa-plus"></i> Add Node</button>
+                    <button id="random-tx-btn" class="btn btn-secondary"><i class="fa-solid fa-random"></i> Random Tx</button>
+                    <button id="sim-btn" class="btn btn-primary"><i class="fa-solid fa-play"></i> Run Sim (A→B→C→D→A)</button>
+                </div>
+            </div>
+            <div id="mynetwork"></div>
+        </section>
+
+        <!-- Dashboard Right: Risk Panel and Logs -->
+        <aside class="right-sidebar">
+            <section class="panel risk-panel">
+                <div class="panel-header">
+                    <h2><i class="fa-solid fa-gauge-high"></i> Risk Assessment</h2>
+                </div>
+                <div class="risk-content">
+                    <div class="score-card" id="risk-score-card">
+                        <span class="score-label">Current Risk Level</span>
+                        <h3 id="risk-level" class="risk-low">LOW</h3>
+                    </div>
+                    <div id="alert-box" class="alert hidden">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <span id="alert-message">Suspicious Circular Transaction Detected</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel log-panel">
+                <div class="panel-header">
+                    <h2><i class="fa-solid fa-list-ul"></i> Transaction Logs</h2>
+                </div>
+                <div class="log-container" id="log-container">
+                    <!-- Logs go here -->
+                </div>
+            </section>
+        </aside>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
