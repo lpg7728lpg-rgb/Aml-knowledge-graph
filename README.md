@@ -5,7 +5,7 @@ A web-based prototype that demonstrates how graph-based systems detect complex m
 ---
 
 ## 🚀 Live Demo
-https://lpg7728lpg-rgb.github.io/aml-knowledge-graph/
+https://lpg7728lpg-rgb.github.io/Aml-knowledge-graph/
 
 ---
 
